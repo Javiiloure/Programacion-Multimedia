@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tarea 4_App</string>
+    <string name="cuando_tengas_problemas_que_pienses_insalvables_piensa_que_un_avi_n_despega_contra_el_viento">Cuando tengas problemas que pienses insalvables, piensa que un avión despega contra el viento.</string>
+    <string name="escribir_el_nombre">Escribir el nombre</string>
+    <string name="boton">Button</string>
+    <string name="todo">TODO</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="imagen">Imagen</string>
+
+</resources>
