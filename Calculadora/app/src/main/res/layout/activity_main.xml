@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:background="#212121"
+    android:orientation="vertical">
+
+    <TextView
+    android:id="@+id/etiqueta"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/gridLayout"
+    android:layout_marginBottom="14dp"
+    android:height="100dp"
+    android:textAlignment="textEnd"
+    android:textColor="#F5F5F5"
+    android:textSize="35sp"
+    android:layout_centerHorizontal="true"
+   />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:rowCount="6">
+
+        <Button
+            android:id="@+id/limpiar"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/c"
+            android:textColor="#FF9800" />
+
+        <Button
+            android:id="@+id/dividir"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/Divide"
+            android:textColor="#FF9800" />
+
+        <Button
+            android:id="@+id/multiplicar"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/x"
+            android:textColor="#FF9800" />
+
+        <Button
+            android:id="@+id/borrar"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/borrar"
+            android:textColor="#FF9800" />
+
+        <Button
+            android:id="@+id/siete"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_7"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/ocho"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_8"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/nueve"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_9"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/resta"
+            android:layout_gravity="fill"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/resta"
+            android:textColor="#FF9800" />
+
+        <Button
+            android:id="@+id/cuatro"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_4"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/cinco"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_5"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/seis"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_6"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/suma"
+            android:layout_gravity="fill"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/suma"
+            android:textColor="#FF9800" />
+
+        <Button
+            android:id="@+id/uno"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_1"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/dos"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_2"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/tres"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_3"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/igual"
+            android:layout_rowSpan="2"
+            android:layout_gravity="fill"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/igual"
+            android:textColor="#FF9800" />
+
+        <Button
+            android:id="@+id/cero"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/_0"
+            android:textColor="#FAFAFA" />
+
+        <Button
+            android:id="@+id/decimal"
+            android:layout_margin="2dp"
+            android:background="#424242"
+            android:text="@string/decimal"
+            android:textColor="#FAFAFA" />
+    </GridLayout>
+</RelativeLayout>
