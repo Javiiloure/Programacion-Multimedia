@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Frutas</string>
+    <string name="Imagen_para_mostrar" />
+    <string name="mostrar">Mostrar</string>
+</resources>
