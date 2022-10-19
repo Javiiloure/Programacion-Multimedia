@@ -7,31 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:layout_centerInParent="true"
+        android:id="@+id/mostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="118dp"
+        android:text="@string/mostrar" />
+
     <ImageView
         android:id="@+id/imagen"
         android:layout_width="369dp"
         android:layout_height="189dp"
+        android:layout_below="@+id/mostrar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
         android:contentDescription="@string/Imagen_para_mostrar"
         app:layout_constraintVertical_bias="0.913"
         app:srcCompat="@drawable/frutas" />
 
-    <Button
-        android:id="@+id/mostrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imagen"
-        android:layout_marginTop="118dp"
-        android:text="@string/mostrar" />
-
     <EditText
         android:id="@+id/opcion"
-        android:layout_width="256dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/imagen"
-        android:layout_alignEnd="@+id/imagen"
-        android:layout_marginTop="118dp"
-        android:layout_marginEnd="-5dp"
-        android:hint="a:Aguacates; c:Cerezas; m:Manzanas"
+        android:layout_above="@id/mostrar"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:hint="@string/a_aguacates_c_cerezas_m_manzanas"
         android:textAlignment="center"
         android:textColorHint="#78909C"
         android:textSize="20sp"
@@ -40,6 +42,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintVertical_bias="0.627"
+        android:importantForAutofill="no" />
 
 </RelativeLayout>
