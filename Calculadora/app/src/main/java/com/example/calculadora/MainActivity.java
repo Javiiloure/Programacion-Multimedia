@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Declaracion y relacion de todos los elementos del layout
         TextView etiqueta = findViewById(R.id.etiqueta);
         Button limpiar = findViewById(R.id.limpiar);
         Button dividir = findViewById(R.id.dividir);
@@ -37,14 +38,17 @@ public class MainActivity extends AppCompatActivity {
         Button nueve = findViewById(R.id.nueve);
         Button decimal = findViewById(R.id.decimal);
 
-
+        // String op para guardar la operación a realizar
         final String[] op = {""};
+        // Array de Strings para guardar los dos numeros con los que se va a operar
         String[] reserva = new String[2];
         reserva[0] = "";
         reserva[1] = "";
+        // Entero auxiliar para acceder al numero uno o al numero dos
         final int[] aux = {0};
 
-
+        // Si presionamos los valores, estos se guardaran el reserva, dependiendo del valor de aux
+        // sera el primer operando o el segundo
         cero.setOnClickListener(view -> {
             reserva[aux[0]] += 0;
             etiqueta.setText(reserva[0] + op[0] + reserva[1]);
@@ -100,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
             etiqueta.setText(reserva[0] + op[0] + reserva[1]);
         });
 
+
+        // Si se presiona un boton relacionado con una operación, se guardara dicha operacion en la variale op
+        // y sumamos 1 a aux para comenzar a registrar el segundo numero
         suma.setOnClickListener(view -> {
             op[0] = "+";
             aux[0]++;
@@ -124,25 +131,28 @@ public class MainActivity extends AppCompatActivity {
             etiqueta.setText(reserva[0] + op[0] + reserva[1]);
         });
 
+        // Si se presiona el boton igual se hace la operacion de los numeros guardados en reserva
         igual.setOnClickListener(view -> {
-            if(op[0] == "+") {
-              etiqueta.setText(String.valueOf(Double.parseDouble(reserva[0]) + Double.parseDouble(reserva[1])));
+            if (op[0] == "+") {
+                etiqueta.setText(String.valueOf(Double.parseDouble(reserva[0]) + Double.parseDouble(reserva[1])));
             }
-            if(op[0] == "-") {
+            if (op[0] == "-") {
                 etiqueta.setText(String.valueOf(Double.parseDouble(reserva[0]) - Double.parseDouble(reserva[1])));
             }
-            if(op[0] == "*") {
+            if (op[0] == "*") {
                 etiqueta.setText(String.valueOf(Double.parseDouble(reserva[0]) * Double.parseDouble(reserva[1])));
             }
-            if(op[0] == "/") {
+            if (op[0] == "/") {
                 etiqueta.setText(String.valueOf(Double.parseDouble(reserva[0]) / Double.parseDouble(reserva[1])));
             }
+            // Reseteamos las variables
             op[0] = "";
             aux[0] = 0;
             reserva[0] = "";
             reserva[1] = "";
         });
 
+        // Si se presiona limpiar reseteamos todas las variables
         limpiar.setOnClickListener(view -> {
             aux[0] = 0;
             reserva[0] = "";
@@ -151,13 +161,25 @@ public class MainActivity extends AppCompatActivity {
             etiqueta.setText("");
         });
 
-        //borrar.setOnClickListener(view -> {
-        //    if(aux[0] == 0) {
-        //        reserva[]
-        //    }
-        //    if(aux[0] == 1) {
-
-        //    }
-      //  });
+        // Si se preasiona borrar primero se comprueba si se trata del
+        // primer operando, del operador o del segundo operando
+        borrar.setOnClickListener(view -> {
+            // Si es el segundo operando se elimina la ultima cifra
+           if(reserva[1].length() > 0) {
+               reserva[1] = reserva[1].substring(0, reserva[1].length()-1);
+               // Si se elimina la ultima cifra, aux se iguala a cero
+               if(reserva[1].length() == 0) {
+                   aux[0] = 0;
+               }
+           } else if(op[0].length() > 0) {
+               op[0] = "";
+               if(reserva[1].length() == 0) {
+                   aux[0] = 0;
+               }
+           } else {
+               reserva[0] = reserva[0].substring(0, reserva[0].length()-1);
+           }
+            etiqueta.setText(reserva[0] + op[0] + reserva[1]);
+        });
     }
 }
