@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ajustes"
+        android:orderInCategory="10"
+        android:title="@string/Ajustes">
+        <menu>
+            <item
+                android:id="@+id/miniajustes"
+                android:orderInCategory="10"
+                android:title="@string/MiniAjustes" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/interfaz"
+        android:orderInCategory="10"
+        android:title="@string/Interfaz">
+        <menu>
+            <item
+                android:id="@+id/miniinterfaz"
+                android:orderInCategory="10"
+                android:title="@string/MiniInterfaz" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/sonido"
+        android:orderInCategory="10"
+        android:title="@string/Sonido">
+        <menu>
+            <item
+                android:id="@+id/minisonido"
+                android:orderInCategory="10"
+                android:title="@string/MiniSonido" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/ayuda"
+        android:orderInCategory="10"
+        android:title="@string/Ayuda">
+        <menu>
+            <item
+                android:id="@+id/miniayuda"
+                android:orderInCategory="10"
+                android:title="@string/MiniAyuda" />
+        </menu>
+    </item>
+</menu>

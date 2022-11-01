@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Prueba_appbar</string>
+    <string name="Ajustes">Ajustes</string>
+    <string name="Interfaz">Interfaz</string>
+    <string name="Sonido">Sonido</string>
+    <string name="Ayuda">Ayuda</string>
+    <string name="MiniAjustes">MiniAjustes</string>
+    <string name="MiniInterfaz">MiniInterfaz</string>
+    <string name="MiniSonido">MiniSonido</string>
+    <string name="MiniAyuda">MiniAyuda</string>
+
+</resources>

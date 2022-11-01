@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tarea_menu_login</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="introduzca_la_contrase_a">Introduzca la contraseña</string>
+    <string name="introduzca_el_usuario">Introduzca el usuario</string>
+    <string name="login">Login</string>
+    <string name="Ajustes">Ajustes</string>
+    <string name="Login">Login</string>
+</resources>
