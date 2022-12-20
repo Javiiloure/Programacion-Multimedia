@@ -6,15 +6,106 @@
     android:layout_height="match_parent"
     tools:context=".AgregarEntrenamiento">
 
-    <TextView
-        android:id="@+id/input_fecha"
-        android:layout_width="208dp"
-        android:layout_height="35dp"
-        android:hint="Introduzca la fecha"
+    <EditText
+        android:id="@+id/input_tiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:gravity="center"
+        android:hint="@string/introduzca_el_tiempo_total"
+        android:inputType="time"
+        android:textColorHint="#757575"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156" />
+        app:layout_constraintVertical_bias="0.189"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/input_velocidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:gravity="center"
+        android:hint="@string/introduzca_la_velocidad_media"
+        android:inputType="number"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_minkm"
+        app:layout_constraintVertical_bias="0.176"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/input_minkm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/introduzca_los_minutos_por_kilometros"
+        android:inputType="numberDecimal"
+        android:textColorHint="#757575"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_distancia"
+        app:layout_constraintVertical_bias="0.133"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/input_distancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/introduzca_la_distancia_total"
+        android:inputType="number"
+        android:textColorHint="#757575"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_tiempo"
+        app:layout_constraintVertical_bias="0.107"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/kmh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/km_h"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/input_velocidad"
+        app:layout_constraintTop_toBottomOf="@+id/input_minkm" />
+
+    <Button
+        android:id="@+id/añadir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/a_adir"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_velocidad"
+        app:layout_constraintVertical_bias="0.502" />
+
+    <Button
+        android:id="@+id/cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.738"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_velocidad"
+        app:layout_constraintVertical_bias="0.502" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
