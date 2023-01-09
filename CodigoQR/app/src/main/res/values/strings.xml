@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CodigoQR</string>
+    <string name="generar_qr">generar QR</string>
+    <string name="escanear_qr">escanear QR</string>
+    <string name="todo">TODO</string>
+    <string name="codigo_qr">Codigo QR</string>
+    <string name="codigo_de_barras">Codigo de Barras</string>
+    <string name="ecanear">Escanear</string>
+    <string name="generar">Generar</string>
+</resources>
