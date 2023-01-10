@@ -2,7 +2,12 @@ package com.example.codigoqr;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -10,5 +15,23 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
+
+        Timer t = new Timer();
+        Intent intent = new Intent(SplashScreen.this, CodigoQR.class);
+        ImageView fondo = findViewById(R.id.fondo);
+
+        t.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                startActivity(intent);
+                finish();
+            }
+        },3000);
+
+        fondo.setOnClickListener(view -> {
+            t.cancel();
+            startActivity(intent);
+            finish();
+        });
     }
 }

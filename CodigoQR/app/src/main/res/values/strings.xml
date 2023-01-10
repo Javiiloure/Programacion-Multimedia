@@ -5,6 +5,6 @@
     <string name="todo">TODO</string>
     <string name="codigo_qr">Codigo QR</string>
     <string name="codigo_de_barras">Codigo de Barras</string>
-    <string name="ecanear">Escanear</string>
-    <string name="generar">Generar</string>
+    <string name="escanear_barras">Escanear Barras</string>
+    <string name="generar_barras">Generar Barras</string>
 </resources>

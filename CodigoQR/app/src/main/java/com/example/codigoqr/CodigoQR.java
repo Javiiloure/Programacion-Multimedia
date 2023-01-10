@@ -48,6 +48,7 @@ public class CodigoQR extends AppCompatActivity {
         integrador.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
         integrador.setPrompt("Escanear Código");
         integrador.setCameraId(0);
+        integrador.setOrientationLocked(false);
         integrador.setBeepEnabled(true);
         integrador.setBarcodeImageEnabled(true);
         integrador.initiateScan();
@@ -103,12 +104,10 @@ public class CodigoQR extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.codigoqr) {
-            Intent intent = new Intent(CodigoQR.this, CodigoQR.class);
-            startActivity(intent);
-        }if (id == R.id.codigobarras){
+        if (id == R.id.codigobarras){
             Intent intent = new Intent(CodigoQR.this, CodigoBarras.class);
             startActivity(intent);
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

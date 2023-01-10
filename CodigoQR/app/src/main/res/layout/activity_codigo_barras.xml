@@ -10,10 +10,10 @@
         android:id="@+id/escanear_barras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ecanear"
+        android:text="@string/escanear_barras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.245" />
@@ -22,10 +22,10 @@
         android:id="@+id/generar_barras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/generar"
+        android:text="@string/generar_barras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.201"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.245" />
@@ -37,10 +37,10 @@
         android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.616"
+        app:layout_constraintVertical_bias="0.622"
         app:srcCompat="@drawable/ic_launcher_foreground"
         tools:ignore="ImageContrastCheck" />
 
