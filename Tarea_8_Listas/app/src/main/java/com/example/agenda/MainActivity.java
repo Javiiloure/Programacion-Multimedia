@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Contacto> contactos;
-    private ArrayAdapter adapter;
+    protected ArrayList<Contacto> contactos;
+    private Adaptador adapter;
     private ListView lista;
     private Button ordenar;
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         ordenar = findViewById(R.id.ordenar);
         lista = findViewById(R.id.lista);
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, contactos);
+        adapter = new Adaptador(this, contactos);
         lista.setAdapter(adapter);
     }
 }
