@@ -2,6 +2,7 @@ package com.example.agenda;
 
 public class Contacto {
 
+    public String apodo;
     public String nombre;
     public String apellido_1;
     public String apellido_2;
@@ -10,6 +11,7 @@ public class Contacto {
     public int telefono;
 
     public Contacto() {
+        this.apodo = "";
         this.nombre = "";
         this.apellido_1 = "";
         this.apellido_2 = "";
@@ -18,7 +20,8 @@ public class Contacto {
         this.telefono = 0;
     }
 
-    public Contacto(String nombre, String apellido_1, String apellido_2, String email, String direccion, int telefono) {
+    public Contacto(String apodo, String nombre, String apellido_1, String apellido_2, String email, String direccion, int telefono) {
+        this.apodo = apodo;
         this.nombre = nombre;
         this.apellido_1 = apellido_1;
         this.apellido_2 = apellido_2;
@@ -26,6 +29,10 @@ public class Contacto {
         this.direccion = direccion;
         this.telefono = telefono;
     }
+
+    public String getApodo() {return apodo;}
+
+    public void setApodo(String apodo) {this.apodo = apodo;}
 
     public String getNombre() {
         return nombre;

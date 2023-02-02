@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Agenda</string>
+    <string name="todo">TODO</string>
+    <string-array name="opciones_spinner">
+        <item>Añadir contacto</item>
+        <item>Eliminar contacto</item>
+        <item>Ajustes</item>
+        <item>Salir</item>
+    </string-array>
 </resources>

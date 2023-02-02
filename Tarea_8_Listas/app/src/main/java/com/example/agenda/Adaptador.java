@@ -42,13 +42,13 @@ public class Adaptador extends BaseAdapter {
         convertView = LayoutInflater.from(context).inflate(R.layout.item, null);
 
         ImageView imgFoto = convertView.findViewById(R.id.icono);
-        TextView nombre = convertView.findViewById(R.id.nombre);
+        TextView apodo = convertView.findViewById(R.id.apodo);
         TextView numero = convertView.findViewById(R.id.numero);
 
         Contacto contacto = (Contacto) getItem(position);
 
         imgFoto.setImageResource(R.drawable.contacto);
-        nombre.setText(contacto.getNombre() + " " );
+        apodo.setText(contacto.getApodo());
         numero.setText(String.valueOf(contacto.getTelefono()));
 
         return convertView;
