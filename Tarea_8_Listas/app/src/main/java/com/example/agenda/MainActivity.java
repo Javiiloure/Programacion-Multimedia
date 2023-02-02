@@ -80,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
         fab1.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
         fab2.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
         fab3.animate().translationY(-getResources().getDimension(R.dimen.standard_155));
+        fab1.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, AnhadirContacto.class));
+        });
         fab2.setOnClickListener(v -> {
             startActivity(new Intent(Settings.ACTION_SETTINGS));
         });

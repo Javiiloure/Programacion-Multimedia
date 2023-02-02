@@ -23,6 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/aleatorio"
+        android:backgroundTint="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.149"
@@ -38,48 +39,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/anhadir"
+        android:backgroundTint="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.837"
         app:layout_constraintStart_toEndOf="@+id/aleatorio"
         app:layout_constraintTop_toBottomOf="@+id/lista"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        android:contentDescription="@string/todo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ajustes"
+        android:backgroundTint="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.837"
         app:layout_constraintStart_toEndOf="@+id/aleatorio"
         app:layout_constraintTop_toBottomOf="@+id/lista"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        android:contentDescription="@string/todo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/salir"
+
+        android:backgroundTint="@color/purple_200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.837"
         app:layout_constraintStart_toEndOf="@+id/aleatorio"
         app:layout_constraintTop_toBottomOf="@+id/lista"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck"
+        android:contentDescription="@string/todo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
+        android:backgroundTint="@color/purple_200"
+        android:contentDescription="@string/todo"
         android:src="@drawable/menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/aleatorio"
         app:layout_constraintTop_toBottomOf="@+id/lista"
-        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck"
-        android:contentDescription="@string/todo" />
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

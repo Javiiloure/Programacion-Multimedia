@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Agenda</string>
     <string name="todo">TODO</string>
+    <string name="nombre">Nombre</string>
+    <string name="primer_apellido">Primer apellido</string>
+    <string name="email">Email</string>
+    <string name="segundo_apellido">Segundo apellido</string>
+    <string name="telefono">Telefono</string>
+    <string name="apodo">Apodo</string>
     <string-array name="opciones_spinner">
         <item>Añadir contacto</item>
         <item>Eliminar contacto</item>
