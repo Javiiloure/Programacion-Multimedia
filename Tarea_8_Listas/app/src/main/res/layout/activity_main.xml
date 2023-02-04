@@ -91,4 +91,16 @@
         app:layout_constraintStart_toEndOf="@+id/aleatorio"
         app:layout_constraintTop_toBottomOf="@+id/lista"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,ImageContrastCheck,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/contactos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contactos"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/lista"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

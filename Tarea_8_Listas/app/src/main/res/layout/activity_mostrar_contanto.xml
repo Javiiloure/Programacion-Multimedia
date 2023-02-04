@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AnhadirContacto">
+    tools:context=".MostrarContacto">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="202dp"
-        android:layout_height="203dp"
+        android:id="@+id/imageView2"
+        android:layout_width="208dp"
+        android:layout_height="202dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/contacto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        app:srcCompat="@drawable/contacto"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.094" />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -27,7 +26,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.392">
 
         <LinearLayout
@@ -35,97 +34,98 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
+            <TextView
                 android:id="@+id/apodo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/apodo"
+                android:textSize="20sp"
                 android:importantForAutofill="no"
-                android:inputType="text"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-            <EditText
+            <TextView
                 android:id="@+id/nombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/nombre"
+                android:textSize="20sp"
                 android:importantForAutofill="no"
-                android:inputType="text"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-            <EditText
+            <TextView
                 android:id="@+id/apellido1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/primer_apellido"
+                android:textSize="20sp"
                 android:importantForAutofill="no"
-                android:inputType="text"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-            <EditText
+            <TextView
                 android:id="@+id/apellido2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/segundo_apellido"
-                android:importantForAutofill="no"
-                android:inputType="text"
+                android:textSize="20sp"
                 android:minHeight="48dp"
                 tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-            <EditText
+            <TextView
                 android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/email"
                 android:importantForAutofill="no"
-                android:inputType="textEmailAddress"
                 android:minHeight="48dp"
+                android:textSize="20sp"
                 tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-            <EditText
+            <TextView
                 android:id="@+id/telefono"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/telefono"
                 android:importantForAutofill="no"
-                android:inputType="phone"
                 android:minHeight="48dp"
-                android:maxLength="9"
+                android:textSize="20sp"
                 tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-            <EditText
+            <TextView
                 android:id="@+id/direccion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
                 android:hint="@string/direccion"
                 android:importantForAutofill="no"
-                android:inputType="text"
+                android:textSize="20sp"
                 tools:ignore="TextContrastCheck,TextContrastCheck" />
 
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/guardar"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/retroceder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#3F51B5"
-        android:text="@string/guardar"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/purple_200"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/retroceder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintHorizontal_bias="0.822"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="ImageContrastCheck,ImageContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,8 @@
     <string name="segundo_apellido">Segundo apellido</string>
     <string name="telefono">Telefono</string>
     <string name="apodo">Apodo</string>
+    <string name="direccion">Direccion</string>
+    <string name="guardar">Guardar</string>
     <string-array name="opciones_spinner">
         <item>Añadir contacto</item>
         <item>Eliminar contacto</item>
