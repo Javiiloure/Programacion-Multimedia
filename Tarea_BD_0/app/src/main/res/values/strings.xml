@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tarea_BD_0</string>
+    <string name="introduzca_su_nombre">Introduca su nombre</string>
+    <string name="introduzca_sus_apellidos">Introduzca sus apellidos</string>
+    <string name="introduzca_su_telefono">Introduzca su telefono</string>
+    <string name="introduzca_su_direccion">Introduzca su direccion</string>
+    <string name="guardar">Guardar</string>
+</resources>
