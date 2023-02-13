@@ -9,17 +9,27 @@ public class Persona {
     public String telefono;
 
     public Persona() {
+        this.codigo = 0;
         this.nombre = "";
         this.apellidos = "";
         this.direccion = "";
         this.telefono = "";
     }
 
-    public Persona(String nombre, String apellidos, String direccion, String telefono) {
+    public Persona(int codigo, String nombre, String apellidos, String direccion, String telefono) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.direccion = direccion;
         this.telefono = telefono;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getNombre() {
@@ -56,11 +66,6 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono='" + telefono + '\'' +
-                '}';
+        return codigo + " " + nombre + " " + apellidos + " " + direccion + " " + telefono;
     }
 }

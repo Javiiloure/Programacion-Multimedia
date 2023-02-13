@@ -1,5 +1,6 @@
-package com.example.tarea_bd_0;
+ package com.example.tarea_bd_0;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected SQLiteDatabase bd;
     protected ArrayList<Persona> personas = new ArrayList<>();
     private ArrayAdapter<String> adaptador;
+    protected int codigo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +45,33 @@ public class MainActivity extends AppCompatActivity {
         adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, personas);
         lista.setAdapter(adaptador);
         guardar.setOnClickListener(this::alta);
+
+        lista.setOnItemLongClickListener((adapterView, view, i, l) -> {
+            AlertDialog.Builder dialogo1 = new AlertDialog.Builder(MainActivity.this);
+            dialogo1.setTitle("Importante");
+            dialogo1.setMessage("¿ Eliminar esta persona ?");
+            dialogo1.setCancelable(false);
+            dialogo1.setPositiveButton("Confirmar", (dialogo11, id) -> {
+                Persona persona = (Persona)lista.getItemAtPosition(i);
+                int aux = persona.getCodigo();
+                bd = admin.getWritableDatabase();
+                bd.execSQL("delete from personas where codigo = " + aux);
+                personas.remove(i);
+                adaptador.notifyDataSetChanged();
+            });
+            dialogo1.show();
+            return false;
+        });
     }
 
     public void getPersonas() {
         Cursor c = bd.rawQuery("Select * from personas", null);
-            while(c.moveToNext()) {
-                Persona persona = new Persona(c.getString(1), c.getString(2), c.getString(3), c.getString(4));
+        Persona persona = new Persona();
+        while(c.moveToNext()) {
+                persona = new Persona(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4));
                 personas.add(persona);
             }
+            codigo = persona.getCodigo();
     }
 
     public void alta(View v) {
@@ -71,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
                 bd.insert("personas", null, registro);
                 bd.close();
 
-                Persona persona = new Persona(nombre, apellido, direccion, telefono);
+                codigo++;
+                Persona persona = new Persona(codigo, nombre, apellido, direccion, telefono);
                 personas.add(persona);
                 lista.setAdapter(adaptador);
 
