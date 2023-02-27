@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Citas</string>
+    <string name="citas">Citas</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora</string>
+    <string name="asunto">Asunto</string>
+    <string name="todo">TODO</string>
+    <string name="titulo">Titulo</string>
+    <string name="insertar_cita">Insertar cita</string>
+    <string name="salir">Salir</string>
+</resources>
