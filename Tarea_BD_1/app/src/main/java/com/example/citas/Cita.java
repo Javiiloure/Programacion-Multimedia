@@ -1,12 +1,15 @@
 package com.example.citas;
 
+import android.widget.ImageView;
+
 public class Cita {
 
-    int id;
-    String titulo;
+    protected int id;
+    protected String titulo;
     protected String fecha;
     protected String hora;
     protected String asunto;
+    protected int imagen;
 
     public Cita(int id, String titulo, String fecha, String hora, String asunto) {
         this.id = id;
@@ -14,6 +17,7 @@ public class Cita {
         this.fecha = fecha;
         this.hora = hora;
         this.asunto = asunto;
+       // this.imagen = R.drawable.cita;
     }
 
     public int getId() {

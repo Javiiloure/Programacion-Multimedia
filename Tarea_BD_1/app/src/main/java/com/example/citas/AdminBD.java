@@ -14,7 +14,8 @@ public class AdminBD extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create table citas(id integer primary key autoincrement, titulo text, fecha text, hora text, asunto text)");
+        db.execSQL("Create table usuarios(id integer primary key autoincrement, usuario text, contraseña text unique)");
+        db.execSQL("Create table citas(id integer primary key autoincrement, titulo text, fecha text, hora text, asunto text, usuario integer not null, foreign key (usuario) references usuarios(id) on delete cascade on update cascade)");
     }
 
     @Override

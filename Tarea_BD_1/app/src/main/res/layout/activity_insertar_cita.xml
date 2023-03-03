@@ -8,7 +8,7 @@
     tools:context=".InsertarCita">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imagen"
         android:layout_width="188dp"
         android:layout_height="170dp"
         android:contentDescription="@string/todo"
@@ -20,39 +20,39 @@
         app:layout_constraintVertical_bias="0.115"
         app:srcCompat="@drawable/cita" />
 
-    <EditText
+    <TextView
         android:id="@+id/fecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:hint="@string/fecha"
         android:importantForAutofill="no"
-        android:inputType="date"
-        android:textSize="24sp"
         android:maxWidth="150dp"
+        android:minHeight="48dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imagen"
         app:layout_constraintVertical_bias="0.111"
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
-    <EditText
+    <TextView
         android:id="@+id/hora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:hint="@string/hora"
         android:importantForAutofill="no"
-        android:inputType="time"
-        android:textSize="24sp"
         android:maxWidth="150dp"
+        android:minHeight="48dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.806"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imagen"
         app:layout_constraintVertical_bias="0.111"
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
@@ -86,7 +86,7 @@
         android:maxWidth="150dp"
         app:layout_constraintBottom_toTopOf="@+id/hora"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/imagen"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextContrastCheck,TextContrastCheck" />
 
@@ -115,4 +115,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/asunto"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+    <CalendarView
+        android:id="@+id/calendarView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.597" />
+
+    <Button
+        android:id="@+id/aceptar_fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/aceptar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView2"
+        app:layout_constraintVertical_bias="0.218" />
 </androidx.constraintlayout.widget.ConstraintLayout>

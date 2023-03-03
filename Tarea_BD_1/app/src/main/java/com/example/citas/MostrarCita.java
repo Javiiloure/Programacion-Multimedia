@@ -2,13 +2,18 @@ package com.example.citas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.TimePickerDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 
 public class MostrarCita extends AppCompatActivity {
 
@@ -24,9 +29,13 @@ public class MostrarCita extends AppCompatActivity {
         FloatingActionButton atras = findViewById(R.id.atras);
 
         EditText input_titulo = findViewById(R.id.titulo);
-        EditText input_fecha = findViewById(R.id.fecha);
-        EditText input_hora = findViewById(R.id.hora);
+        TextView input_fecha = findViewById(R.id.fecha);
+        TextView input_hora = findViewById(R.id.hora);
         EditText input_asunto = findViewById(R.id.asunto);
+        CalendarView calendario = findViewById(R.id.calendarView);
+        Button aceptar_fecha = findViewById(R.id.aceptar_fecha);
+        calendario.setVisibility(View.INVISIBLE);
+        aceptar_fecha.setVisibility(View.INVISIBLE);
 
         Bundle extras = getIntent().getExtras();
 
@@ -41,13 +50,41 @@ public class MostrarCita extends AppCompatActivity {
         input_hora.setText(hora);
         input_asunto.setText(asunto);
 
-        // Volvemos al activity principal
-        Intent intent = new Intent(MostrarCita.this, MainActivity.class);
-        atras.setOnClickListener(view -> {
-            startActivity(intent);
-            finish();
+        // Mostramos el calendario al clickar en la fecha
+        input_fecha.setOnClickListener(v -> {
+            input_fecha.setVisibility(View.INVISIBLE);
+            input_hora.setVisibility(View.INVISIBLE);
+            input_asunto.setVisibility(View.INVISIBLE);
+            calendario.setVisibility(View.VISIBLE);
+            aceptar_fecha.setVisibility(View.VISIBLE);
+            calendario.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
+                month++;
+                input_fecha.setText(dayOfMonth + "/" + month + "/" + year);
+            });
+        });
+        aceptar_fecha.setOnClickListener(v -> {
+            calendario.setVisibility(View.INVISIBLE);
+            aceptar_fecha.setVisibility(View.INVISIBLE);
+            input_fecha.setVisibility(View.VISIBLE);
+            input_hora.setVisibility(View.VISIBLE);
+            input_asunto.setVisibility(View.VISIBLE);
         });
 
+        // Mostramos un TimePickerDialog al clickar en hora
+        input_hora.setOnClickListener(v -> {
+            TimePickerDialog d = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+                @Override
+                public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                    input_hora.setText(hourOfDay + ":" + minute);
+                }
+            },10, 30, true);
+            d.show();
+        });
+
+        // Volvemos al activity principal
+        atras.setOnClickListener(view -> {
+            finish();
+        });
 
         // Actualizamos la cita con los nuevos datos al presionar guardar
         guardar.setOnClickListener(view -> {
@@ -71,7 +108,6 @@ public class MostrarCita extends AppCompatActivity {
                     break;
                 }
             }
-            startActivity(intent);
             finish();
         });
     }

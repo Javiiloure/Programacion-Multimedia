@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -20,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private final AdminBD admin = new AdminBD(MainActivity.this, nombreBD, null, 1);
     protected static SQLiteDatabase bd;
     protected static ArrayList<Cita> citas ;
-    protected Adaptador adaptador;
+    protected static Adaptador adaptador;
+    protected int usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +32,20 @@ public class MainActivity extends AppCompatActivity {
         citas = new ArrayList<>();
         adaptador = new Adaptador(this, citas);
 
-         bd = admin.getWritableDatabase();
-        // bd.execSQL("insert into citas (titulo, fecha, hora, asunto) values ('Medico', '17/02/2023', '12:30', 'Revision de sinusitis cronica');");
-        //bd.execSQL("insert into citas (titulo, fecha, hora, asunto) values ('Mecanico', '25/02/2023', '17:45', 'Cambio de aceite y de pastillas de freno');");
-        //bd.execSQL("insert into citas (titulo, fecha, hora, asunto) values ('Peluqueria', '31/02/2023', '11:00', 'Corte de pelo y afeitado');");
-        //bd.execSQL("insert into citas (titulo, fecha, hora, asunto) values ('Fisioterapeuta', '03/03/2023', '18:15', 'Revision escoliosis');");
+        bd = admin.getWritableDatabase();
+       //bd.execSQL("insert into citas (titulo, fecha, hora, asunto, usuario) values ('Medico', '17/02/2023', '12:30', 'Revision de sinusitis cronica', 1);");
+       //bd.execSQL("insert into citas (titulo, fecha, hora, asunto, usuario) values ('Mecanico', '25/02/2023', '17:45', 'Cambio de aceite y de pastillas de freno', 1);");
+       //bd.execSQL("insert into citas (titulo, fecha, hora, asunto, usuario) values ('Peluqueria', '31/02/2023', '11:00', 'Corte de pelo y afeitado', 1);");
+       //bd.execSQL("insert into citas (titulo, fecha, hora, asunto, usuario) values ('Fisioterapeuta', '03/03/2023', '18:15', 'Revision escoliosis', 1);");
+       //bd.execSQL("insert into citas (titulo, fecha, hora, asunto, usuario) values ('Medico_2', '17/02/2023', '12:30', 'Revision de sinusitis cronica', 2);");
+       //bd.execSQL("insert into citas (titulo, fecha, hora, asunto, usuario) values ('Mecanico_2', '25/02/2023', '17:45', 'Cambio de aceite y de pastillas de freno', 2);");
+       //bd.execSQL("insert into citas (titulo, fecha, hora, asunto, usuario) values ('Peluqueria_2', '31/02/2023', '11:00', 'Corte de pelo y afeitado', 2);");
+       //bd.execSQL("insert into citas (titulo, fecha, hora, asunto, usuario) values ('Fisioterapeuta_2', '03/03/2023', '18:15', 'Revision escoliosis', 2);");
 
-        getCitas();
+        // Obtenemos el usuario guardado en las sharedpreferences previamente el el Login
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
+        usuario = sharedPreferences.getInt("usuario", 0);
+        getCitas(usuario);
         ListView lista = findViewById(R.id.citas);
         lista.setAdapter(adaptador);
 
@@ -55,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 bd = admin.getWritableDatabase();
                 bd.execSQL("delete from citas where id = " + aux.getId() + ";");
                 adaptador.notifyDataSetChanged();
+                longclick[0] = false;
             });
             alerta.setNegativeButton("Denegar", (alerta2, id) -> longclick[0] = false);
             alerta.show();
@@ -81,13 +91,13 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("asunto", asunto);
 
             startActivity(intent);
-            finish();
         }));
     }
 
-    public void getCitas() {
+    // Obtenemos las citas que el usuario tiene asignadas
+    public void getCitas(int usuario) {
         bd = admin.getReadableDatabase();
-        Cursor c = bd.rawQuery("Select * from citas", null);
+        Cursor c = bd.rawQuery("Select * from citas c where c.usuario = " + usuario, null);
         Cita cita;
         while(c.moveToNext()) {
             cita = new Cita(c.getInt(0), c.getString(1), c.getString(2), c.getString(3), c.getString(4));
@@ -106,13 +116,16 @@ public class MainActivity extends AppCompatActivity {
     // Controlamos que se seleccione un item del menu
     @Override
     public boolean onOptionsItemSelected( @NonNull MenuItem item ) {
+        Intent intent;
         switch (item.getItemId()) {
             case R.id.insertar:
-                Intent intent = new Intent(MainActivity.this, InsertarCita.class);
+                intent = new Intent(MainActivity.this, InsertarCita.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.salir:
+                intent = new Intent(MainActivity.this, Login.class);
+                startActivity(intent);
                 finish();
         }
         return super.onOptionsItemSelected(item);
