@@ -21,16 +21,17 @@ public class Servidor extends Conexion // Se hereda de conexi�n para hacer uso
 //            salidaCliente.writeUTF("Petici�n recibida y aceptada");
 			// Se obtiene el flujo entrante desde el cliente
 			BufferedReader entrada = new BufferedReader(new InputStreamReader(cs.getInputStream()));
-			while ((mensajeServidor = entrada.readLine()) != null) // Mientras haya mensajes desde el cliente
+			while (true) // Mientras haya mensajes desde el cliente
 			{
 				// Se muestra por pantalla el mensaje recibido
+				mensajeServidor = entrada.readLine();
 				System.out.println(mensajeServidor);
 				return mensajeServidor;
 			}
 
-			System.out.println("Fin de la conexi�n");
-			ss.close();// Se finaliza la conexi�n con el cliente
-			return mensajeServidor;
+			//System.out.println("Fin de la conexi�n");
+			//ss.close();// Se finaliza la conexi�n con el cliente
+			//return mensajeServidor;
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return mensajeServidor;

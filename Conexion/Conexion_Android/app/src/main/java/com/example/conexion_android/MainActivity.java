@@ -1,4 +1,4 @@
-package com.example.conexion;
+package com.example.conexion_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -42,27 +42,26 @@ public class MainActivity extends AppCompatActivity {
 
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().permitNetwork().build());
 
-        Button btnConectar = (Button) findViewById(R.id.btnConectar);
-        // Button btnRecibir = (Button) findViewById(R.id.btnRecibir);
+        Button conectar = (Button) findViewById(R.id.btnConectar);
+        Button enviar = (Button) findViewById(R.id.enviar);
         txtMensaje = (TextView) findViewById(R.id.txtMensaje);
         txtAvisos = (TextView) findViewById(R.id.txtAvisos);
 
-        btnConectar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Handler mainHandler = new Handler(Looper.getMainLooper());
-                Runnable myRunnable = new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            resultado=connectSocket(txtMensaje.getText().toString(), ip, puerto);
-                            txtAvisos.setText("Servidor: "+resultado);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                };
-                mainHandler.post(myRunnable);
+       enviar.setOnClickListener(v -> {
+           try {
+               Log.i("Mensaje", txtMensaje.getText().toString());
+               LanzadorCliente.main(txtMensaje.getText().toString());
+           } catch(IOException e) {
+               e.printStackTrace();
+           }
+       });
+
+        conectar.setOnClickListener(view -> {
+            try {
+                String mensaje = LanzadorServer.main();
+                txtAvisos.setText(mensaje);
+            } catch(IOException e){
+                e.printStackTrace();
             }
         });
     }
